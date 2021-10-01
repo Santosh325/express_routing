@@ -7,10 +7,16 @@ app.get('/',(req,res) => {
 })
 
 app.get('/about',(req,res) => {
-    res.status(200).send("hello from about page.")
+    res.write("<h1>hello from about page.</h1>")
+    res.write('<h2>I am h2</h2>')
+    res.send()
 })
 app.get('/contact',(req,res) => {
-    res.status(200).send("hello from contact page.")
+    res.status(200).json({
+        id: 2,
+        name: 'santosh',
+        contact: '09808087',
+    })
 })
 
 
